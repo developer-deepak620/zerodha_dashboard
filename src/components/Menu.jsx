@@ -30,17 +30,6 @@ function Menu() {
     });
   }, []);
 
-//   const handleLogout = () => {
-//   axios.get("http://localhost:9876/logout", {
-//     withCredentials: true,
-//   })
-//   .then(() => {
-//     navigate("http://localhost:5173/signin");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-// };
 
 
   return (
@@ -71,7 +60,7 @@ function Menu() {
         <div className="profile" onClick={handleProfileClick}>
           <div className="avatar">{username?.username}</div>
           {/* <button className='logout-btn' onClick={handleLogout}>LogOut</button> */}
-          <a href="https://zerodha-backend-5ncl.onrender.com//logout">Logout</a>
+          <a href="https://zerodha-backend-5ncl.onrender.com/logout">Logout</a>
         </div>
       </div>
     </div>

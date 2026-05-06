@@ -8,7 +8,7 @@ function ProtectedRoute({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9876/me", {
+      .get("https://zerodha-backend-5ncl.onrender.com/me", {
         withCredentials: true,
       })
       .then(() => {

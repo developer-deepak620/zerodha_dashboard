@@ -5,7 +5,6 @@ import axios from 'axios';
 
 function Menu() {
 
-  // const navigate = useNavigate();
 
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);

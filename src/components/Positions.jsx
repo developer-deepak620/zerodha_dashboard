@@ -8,7 +8,7 @@ function Positions() {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(()=>{
-    axios.get("https://zerodha-backend-bt2m.onrender.com/allPositions").then((res)=>{
+    axios.get("https://zerodha-backend-bt2m.onrender.com/allPositions",{withCredentials: true,}).then((res)=>{
       setAllPositions(res.data);
     });
   },[]);
@@ -19,6 +19,7 @@ function Positions() {
 
       <div className="order-table">
         <table>
+          <thead>
           <tr>
             <th>Product</th>
             <th>Instrument</th>
@@ -28,6 +29,7 @@ function Positions() {
             <th>P&L</th>
             <th>Chg.</th>
           </tr>
+          </thead>
 
           {allPositions.map((stock, index)=>{
             const currValue = stock.price * stock.qty;
@@ -36,6 +38,7 @@ function Positions() {
             const dayClass = stock.isLoss ? "loss" : "profit";
 
             return(
+              <tbody>
               <tr key={index}>
                 <td>{stock.product}</td>
                 <td>{stock.name}</td>
@@ -45,6 +48,7 @@ function Positions() {
                 <td className={profitClass}>{(currValue - stock.avg * stock.qty).toFixed(2)}</td>
                 <td className={dayClass}>{stock.day}</td>
               </tr>
+              </tbody>
             )
 
           })}

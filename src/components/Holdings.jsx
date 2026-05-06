@@ -9,7 +9,7 @@ function Holding() {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(()=>{
-    axios.get("https://zerodha-backend-bt2m.onrender.com/allHoldings").then((res)=>{
+    axios.get("https://zerodha-backend-bt2m.onrender.com/allHoldings",{withCredentials: true,}).then((res)=>{
       setAllHoldings(res.data);
     });
   },[]);
@@ -35,6 +35,7 @@ function Holding() {
 
       <div className="order-table">
         <table>
+          <thead>
           <tr>
             <th>Instrument</th>
             <th>Qty.</th>
@@ -45,6 +46,7 @@ function Holding() {
             <th>Net chg.</th>
             <th>Day chg.</th>
           </tr>
+          </thead>
 
           {allHoldings.map((stock, index)=>{
             const currValue = stock.price * stock.qty;
@@ -53,6 +55,7 @@ function Holding() {
             const dayClass = stock.isLoss ? "loss" : "profit";
 
             return(
+              <tbody>
               <tr key={index}>
                 <td>{stock.name}</td>
                 <td>{stock.qty}</td>
@@ -63,6 +66,7 @@ function Holding() {
                 <td className={profitClass}>{stock.net}</td>
                 <td className={dayClass}>{stock.day}</td>
               </tr>
+              </tbody>
             )
 
           })}

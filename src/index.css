@@ -303,8 +303,8 @@ hr {
 }
 
 .profile .avatar {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   position: relative;
   font-size: 0.7rem;
@@ -843,3 +843,12 @@ hr {
 }
 
 
+.logout-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-btn:hover{
+  color: #ff5722;
+}

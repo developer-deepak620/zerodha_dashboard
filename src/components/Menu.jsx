@@ -59,7 +59,7 @@ function Menu() {
         <div className="profile" onClick={handleProfileClick}>
           <div className="avatar">{username?.username}</div>
           {/* <button className='logout-btn' onClick={handleLogout}>LogOut</button> */}
-          <a href="https://zerodha-backend-5ncl.onrender.com/logout">Logout</a>
+          <a className='logout-btn' href="https://zerodha-backend-5ncl.onrender.com/logout">Logout</a>
         </div>
       </div>
     </div>

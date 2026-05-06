@@ -844,11 +844,10 @@ hr {
 
 
 .logout-btn{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+ text-decoration: none;
+ color: #313131;
 }
 
 .logout-btn:hover{
-  color: #ff5722;
+  color: rgb(245, 104, 52);
 }

@@ -24,7 +24,7 @@ function Menu() {
 
 
   useEffect(() => {
-    axios.get("https://zerodha-backend-bt2m.onrender.com/check", { withCredentials: true, }).then((res) => {
+    axios.get("https://zerodha-backend-5ncl.onrender.com/check", { withCredentials: true, }).then((res) => {
       // console.log(res.data);
       setUsername(res.data.user);
     });
@@ -71,7 +71,7 @@ function Menu() {
         <div className="profile" onClick={handleProfileClick}>
           <div className="avatar">{username?.username}</div>
           {/* <button className='logout-btn' onClick={handleLogout}>LogOut</button> */}
-          <a href="https://zerodha-backend-bt2m.onrender.com/logout">Logout</a>
+          <a href="https://zerodha-backend-5ncl.onrender.com//logout">Logout</a>
         </div>
       </div>
     </div>

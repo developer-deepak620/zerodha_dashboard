@@ -9,7 +9,7 @@ function Holding() {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(()=>{
-    axios.get("https://zerodha-backend-bt2m.onrender.com/allHoldings",{withCredentials: true,}).then((res)=>{
+    axios.get("https://zerodha-backend-5ncl.onrender.com//allHoldings",{withCredentials: true,}).then((res)=>{
       setAllHoldings(res.data);
     });
   },[]);

@@ -8,7 +8,7 @@ function Orders() {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("https://zerodha-backend-bt2m.onrender.com/allOrders",{withCredentials: true,}).then((res) => {
+    axios.get("https://zerodha-backend-5ncl.onrender.com/allOrders",{withCredentials: true,}).then((res) => {
       // console.log(res.data);
       setAllOrders(res.data);
     });

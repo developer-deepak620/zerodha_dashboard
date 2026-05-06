@@ -7,12 +7,18 @@ function Orders() {
 
   const [allOrders, setAllOrders] = useState([]);
 
-  useEffect(() => {
-    axios.get("https://zerodha-backend-5ncl.onrender.com/allOrders",{withCredentials: true,}).then((res) => {
-      // console.log(res.data);
+useEffect(() => {
+  axios
+    .get("https://zerodha-backend-5ncl.onrender.com/allOrders", {
+      withCredentials: true,
+    })
+    .then((res) => {
       setAllOrders(res.data);
+    })
+    .catch((err) => {
+      console.log("API failed:", err);
     });
-  }, []);
+}, []);
 
   return (
     <div className="orders">
